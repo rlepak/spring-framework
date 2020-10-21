@@ -2,20 +2,13 @@ package services;
 
 import interfaces.Course;
 import interfaces.ExtraSessions;
+import lombok.Data;
 import org.springframework.stereotype.Controller;
 
-@Controller
+@Data
 public class Java implements Course {
 
     private OfficeHours officeHours;
-
-    public OfficeHours getOfficeHours() {
-        return officeHours;
-    }
-
-    public void setOfficeHours(OfficeHours officeHours) {
-        this.officeHours = officeHours;
-    }
 
     @Override
     public void getTeachingHours() {
