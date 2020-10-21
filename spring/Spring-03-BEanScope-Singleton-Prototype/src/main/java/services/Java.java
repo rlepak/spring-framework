@@ -1,7 +1,6 @@
 package services;
 
 import interfaces.Course;
-import interfaces.ExtraSessions;
 import org.springframework.stereotype.Controller;
 
 @Controller
