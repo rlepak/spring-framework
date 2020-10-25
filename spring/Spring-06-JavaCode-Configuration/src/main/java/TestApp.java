@@ -13,16 +13,7 @@ public class TestApp {
 
         Course course = container.getBean("java", Course.class);
 
-        Course course1 = container.getBean("java", Course.class);
-
         System.out.println(course.toString());
-        
-          Course course2 = container.getBean("java", Course.class);
-
-        System.out.println(course.toString());
-
-        System.out.println(course.toString());
-        course.getTeachingHours();
 
     }
 }
