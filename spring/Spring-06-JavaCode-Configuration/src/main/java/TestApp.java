@@ -17,7 +17,7 @@ public class TestApp {
 
         System.out.println(course.toString());
 
-
+        System.out.println(course.toString());
         course.getTeachingHours();
 
     }
