@@ -1,32 +1,24 @@
 package services;
 
 import interfaces.Course;
+import interfaces.ExtraSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class Java implements Course {
 
-    // field injection
-    @Autowired
-    private OfficeHours officeHours;
-
-//    //constructor injection
 //    @Autowired
-//    public Java(OfficeHours officeHours) {
-//        this.officeHours = officeHours;
-//    }
+//    @Qualifier("officeHours")
+    private ExtraSession extraSession;
 
-
-//    //setter injection
-//@Autowired
-//    public void setOfficeHours(OfficeHours officeHours) {
-//        this.officeHours = officeHours;
-//    }
+    public Java(@Qualifier("officeHours") ExtraSession extraSession) {
+        this.extraSession = extraSession;
+    }
 
     @Override
     public void getTeachingHours() {
-        System.out.println("Weekly teaching hours: " + (30 + officeHours.getHours()));
+        System.out.println("Weekly teaching hours: " + extraSession.getHours());
     }
 }
