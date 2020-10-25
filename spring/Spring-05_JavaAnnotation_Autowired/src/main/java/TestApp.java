@@ -8,7 +8,6 @@ public class TestApp {
 
         Course course = container.getBean("java", Course.class);
 
-        Course api = container.getBean("API", Course.class);
 
         course.getTeachingHours();
 
