@@ -9,5 +9,9 @@ public class OfficeHours implements ExtraSessions {
         return 5;
     }
 
+    public int getExtraMentoringHours(){
+        return 10;
+    }
+
 
 }
