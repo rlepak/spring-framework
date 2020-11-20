@@ -6,5 +6,11 @@
 </head>
 <body>
 Hello World!
+<p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+    const dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
 </body>
 </html>

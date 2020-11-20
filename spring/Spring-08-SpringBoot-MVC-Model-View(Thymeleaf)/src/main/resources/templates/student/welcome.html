@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="us" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+        <h1>Welcome to Student view!</h1>
+
+        <h2 th:text="${'Hello ' + name}"></h2>
+        <h2 th:text="${date}"></h2>
+
+        <h2 th:text="${numbers.get(2)}"></h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td th:text="${name}">h</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+        </table>
+</body>
+</html>
