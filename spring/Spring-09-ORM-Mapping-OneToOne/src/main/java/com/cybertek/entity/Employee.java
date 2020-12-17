@@ -19,6 +19,10 @@ public class Employee extends BaseEntity{
     private String lastName;
     private String email;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "region_id")
+    private Region region;
+
     @Column(columnDefinition = "DATE")
     private LocalDate hireDate;
 
