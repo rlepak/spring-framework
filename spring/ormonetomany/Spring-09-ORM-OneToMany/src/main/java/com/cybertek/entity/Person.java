@@ -29,7 +29,9 @@ public class Person {
         this.lastName = lastName;
     }
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id")
     private List<Address> addresses;
+
+
 }
