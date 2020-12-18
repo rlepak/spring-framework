@@ -19,8 +19,6 @@ public class Address {
     private Long id;
 
     private String street;
-
-
     private String zipCode;
 
     @ManyToOne
