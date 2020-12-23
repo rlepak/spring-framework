@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class Genre extends BaseEntity{
-
 
     private String name;
 

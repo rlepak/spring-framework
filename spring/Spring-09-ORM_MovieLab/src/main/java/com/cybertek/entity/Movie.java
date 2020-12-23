@@ -1,5 +1,6 @@
 package com.cybertek.entity;
 
+
 import com.cybertek.enums.MovieState;
 import com.cybertek.enums.MovieType;
 import lombok.Getter;
@@ -18,10 +19,9 @@ import java.util.List;
 @NoArgsConstructor
 public class Movie extends BaseEntity{
 
-
     private String name;
 
-    @Column(columnDefinition = "DATE")
+    @Column(columnDefinition = "Date")
     private LocalDate releaseDate;
 
     private Integer duration;
@@ -39,10 +39,9 @@ public class Movie extends BaseEntity{
 
     @ManyToMany
     @JoinTable(name = "movie_genre_rel",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    joinColumns = @JoinColumn(name = "movie_id"),
+    inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList = new ArrayList<>();
-
 
     public Movie(String name, LocalDate releaseDate, Integer duration, String summary, MovieType type, MovieState state, BigDecimal price) {
         this.name = name;

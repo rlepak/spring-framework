@@ -1,30 +1,38 @@
 package com.cybertek.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tickets")
-public class Ticket {
+@Getter
+@Setter
+@NoArgsConstructor
+public class Ticket extends BaseEntity{
 
-    @Id
-    private Long ticketId;
+    @Column(name = "seat_number")
+    private Integer seatNumber;
 
-    private Long movieCinemaId;
+    @Column(name = "row_number")
+    private Integer rowNumber;
 
-    private Long userAccountId;
-
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
 
-    private Long seatNumber;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "movie_cinema_id")
+    private MovieCinema movieCinema;
 
-    private Long rowNumber;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_account_id")
+    private User user;
 
-
-
-
-
+    public Ticket(Integer seatNumber, Integer rowNumber, LocalDateTime dateTime) {
+        this.seatNumber = seatNumber;
+        this.rowNumber = rowNumber;
+        this.dateTime = dateTime;
+    }
 }
