@@ -36,7 +36,7 @@ public class HomeController {
         return restTemplate.getForObject(URL, Object.class, id);
     }
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public ResponseEntity<Object> consumePostsFromDummyApi(){
 
         HttpHeaders headers = new HttpHeaders();
