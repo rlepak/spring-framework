@@ -30,12 +30,12 @@ public class SecurityService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(foundUser.getUsername(), foundUser.getPassword(), listAuthorities(foundUser));
     }
 
-    private User loadUser(String value){
+    public User loadUser(String value){
         boolean isEmail = value.contains("@");
         return isEmail ? userService.readByEmail(value) : userService.readByUsername(value);
     }
 
-    private List<GrantedAuthority> listAuthorities(User user){
+    public List<GrantedAuthority> listAuthorities(User user){
         List<GrantedAuthority> grantedAuthorityList = new ArrayList<>();
         grantedAuthorityList.add(new SimpleGrantedAuthority(user.getRole().name()));
         return grantedAuthorityList;
