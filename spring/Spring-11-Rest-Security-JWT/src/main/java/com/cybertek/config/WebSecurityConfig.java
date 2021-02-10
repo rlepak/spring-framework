@@ -19,14 +19,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     SecurityFilter securityFilter;
 
 
-    @Bean
     @Override
-    public AuthenticationManager authenticationManager() throws Exception{
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
+
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
 
         http
                 .csrf().disable()

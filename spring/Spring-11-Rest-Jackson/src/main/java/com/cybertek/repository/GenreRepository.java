@@ -22,7 +22,8 @@ public interface GenreRepository extends JpaRepository <Genre, Long>{
 //    List<Genre> retrieveByName(String name);
 
 
-
+@Query(value = "select count (*) from genre g join movie_genre_rel mgr on g.id=mgr.genre_id where g.id = ?1", nativeQuery = true)
+    Integer countGenresNativeQuery(Long id);
 
 
 
