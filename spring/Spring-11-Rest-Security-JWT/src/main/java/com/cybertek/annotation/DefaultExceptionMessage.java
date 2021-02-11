@@ -1,4 +1,4 @@
-package com.cybertek.annotarion;
+package com.cybertek.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
