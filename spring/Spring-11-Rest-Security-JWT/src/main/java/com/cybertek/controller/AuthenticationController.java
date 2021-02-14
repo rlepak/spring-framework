@@ -7,6 +7,8 @@ import com.cybertek.entity.ResponseWrapper;
 import com.cybertek.entity.User;
 import com.cybertek.service.UserService;
 import com.cybertek.util.JWTUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.Getter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Tag(name = "Authenticate controller", description = "Authenticate API")
 public class AuthenticationController {
 
     private UserService userService;
@@ -28,6 +31,7 @@ public class AuthenticationController {
 
     @PostMapping("/authenticate")
     @DefaultExceptionMessage(defaultMessage = "Bad Credential")
+    @Operation(summary = "Login to application")
     public ResponseEntity<ResponseWrapper> doLogin(@RequestBody AuthenticationRequest authenticationRequest){
         String password = authenticationRequest.getPassword();
         String username = authenticationRequest.getUsername();

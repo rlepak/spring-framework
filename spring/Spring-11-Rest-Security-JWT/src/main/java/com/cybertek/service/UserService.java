@@ -57,6 +57,7 @@ public class UserService {
             throw new ServiceException("This user does not exist");
         }
         user.setIsVerified(false);
+        user.setState(UserState.ACTIVE);
         userRepository.save(user);
     }
     @Transactional
