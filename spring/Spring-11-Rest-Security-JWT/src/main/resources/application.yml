@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 9090
 spring:
   application:
     name: spring-rest-security
@@ -24,4 +24,4 @@ security:
     secret-key: cybertek
 springdoc:
   swagger-ui:
-    path: /swager-ui.html
+    path: /swagger-ui.html

@@ -35,4 +35,5 @@ public class User extends BaseEntity{
     private UserState state;
 
     private Boolean isVerified;
+
 }

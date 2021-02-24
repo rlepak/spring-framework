@@ -26,6 +26,7 @@ public class ExceptionMessageHandler {
         return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.CONFLICT.value()).message(message).build(), HttpStatus.CONFLICT);
     }
 
+
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ResponseWrapper> accessDeniedException(AccessDeniedException se) {
         String message = se.getMessage();

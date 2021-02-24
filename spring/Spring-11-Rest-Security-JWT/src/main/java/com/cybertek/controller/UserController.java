@@ -29,9 +29,9 @@ public class UserController {
         return ResponseEntity.ok(new ResponseWrapper("Done", users));
     }
 
-    @PostMapping("/create-user")
-    public ResponseEntity<ResponseWrapper> createAccount(@RequestBody User user) throws ServiceException {
-        User createdUser = userService.createUser(user);
-        return ResponseEntity.ok(new ResponseWrapper("User has been created successfully", createdUser));
-    }
+//    @PostMapping("/create-user")
+//    public ResponseEntity<ResponseWrapper> createAccount(@RequestBody User user) throws ServiceException {
+//        User createdUser = userService.createUser(user);
+//        return ResponseEntity.ok(new ResponseWrapper("User has been created successfully", createdUser));
+//    }
 }

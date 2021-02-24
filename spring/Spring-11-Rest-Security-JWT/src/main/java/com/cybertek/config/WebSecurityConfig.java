@@ -1,5 +1,4 @@
 package com.cybertek.config;
-
 import com.cybertek.service.SecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
 
     @Autowired
     SecurityFilter securityFilter;
@@ -30,9 +30,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/create-user",
             "/api/p1/**",
             "/v3/api-docs/**",
-            "/swager-resources/**",
-            "/swager-ui.html",
-            "/swager-ui/**",
+            "/swagger-resources/**",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
             "/webjars/**"
 
     };
